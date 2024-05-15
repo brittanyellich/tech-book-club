@@ -1,0 +1,33 @@
+{
+  "name": "tech-book-club",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script/index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "NODE_ENV=test jest",
+    "start": "node --import ./ts-node.register.mjs src/index.ts"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.ts"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^20.1.1",
+    "fs": "^0.0.1-security",
+    "jest": "^29.7.0",
+    "path": "^0.12.7",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-typescript": "^7.24.1",
+    "@types/jest": "^29.5.12",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.4.5"
+  },
+  "tsconfig": "tsconfig.json"
+}

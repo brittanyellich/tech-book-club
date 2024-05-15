@@ -1,1 +1,1 @@
-# tech-book-club
+# Tech Book Club

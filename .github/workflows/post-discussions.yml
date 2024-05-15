@@ -1,0 +1,33 @@
+name: Post Discussions
+
+on:
+#   schedule:
+#     # every day at 9am PDT
+#     - cron: 0 16 * * *
+    
+  workflow_dispatch:
+
+jobs:
+  post-todays-discussions:
+    permissions: write-all
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+            node-version: '21'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run npm start
+        run: npm start
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY_ID: ${{ secrets.REPOSITORY_ID }}
+          CATEGORY_ID: ${{ secrets.CATEGORY_ID }}
+          OWNER: ${{ secrets.OWNER }}
+          REPO: ${{ secrets.REPO }}
